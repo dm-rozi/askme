@@ -17,8 +17,9 @@ class User < ApplicationRecord
     presence: true,
     uniqueness: { case_sensitive: false },
     format: { with: /[\w]+@[\w\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i }
-  validates :password, presence: true, on: :create
-  validates_confirmation_of :password
+  validates :password,
+    presence: true, on: :create,
+    confirmation: true
 
   before_validation :downcase_username
   before_save :encrypt_password
