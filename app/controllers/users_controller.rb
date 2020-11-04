@@ -23,7 +23,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to root_url, notice: 'Пользователь успешно зарегистрирован!'
     else
-      render 'edit'
+      render 'new'
     end
   end
 
