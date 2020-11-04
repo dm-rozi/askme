@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to root_url, notice: 'Пользователь успешно зарегистрирован!'
     else
-      render 'new'
+      render 'edit'
     end
   end
 
@@ -32,6 +32,8 @@ class UsersController < ApplicationController
   def show
     @questions = @user.questions.order(created_at: :desc)
     @questions_count = @questions.size
+    @answers_count = @questions.where.not(answer: nil).count
+    @unanswered_count = @questions_count - @answers_count
 
     # Для формы нового вопроса создаём заготовку, вызывая build у результата вызова метода @user.questions.
     @new_question = @user.questions.build
