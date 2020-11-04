@@ -35,7 +35,7 @@ class UsersController < ApplicationController
     @questions_count = @questions.size
     @answers_count = @questions.where.not(answer: nil).count
     @unanswered_count = @questions_count - @answers_count
-    @background_color = @user.background_color
+    @user.background_color ||= "#005A55"
 
     # Для формы нового вопроса создаём заготовку, вызывая build у результата вызова метода @user.questions.
     @new_question = @user.questions.build
