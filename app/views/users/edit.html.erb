@@ -53,5 +53,12 @@
       <%= link_to 'Вернуться', user_path(@user) %>
     </div>
     <% end %>
+
+    <% if @user == current_user %>
+      <div class="buffer-top-large buffer-bottom">
+        Для удаления вашего профиля пройдите по <%= link_to 'ссылке', user_path(@user),
+                                                            method: :delete, data: {confirm: 'Вы уверены, что хотите удалить аккаунт?'} %>
+      </div>
+    <% end %>
   </div>
 </div>
