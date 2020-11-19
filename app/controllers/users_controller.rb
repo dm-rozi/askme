@@ -72,6 +72,5 @@ class UsersController < ApplicationController
     params
       .require(:user)
       .permit(:email, :password, :password_confirmation, :name, :username, :avatar_url, :background_color)
-      .with_defaults(background_color: '#005A55')
   end
 end
