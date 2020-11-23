@@ -54,8 +54,9 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    session[:user_id] = nil
     @user.destroy
-    redirect_to root_path
+    redirect_to root_path, notice: 'Ваш аккаунт удален! Приходите еще!'
   end
 
   private
