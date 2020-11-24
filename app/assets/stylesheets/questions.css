@@ -24,11 +24,17 @@
 }
 
 .question-answer {
+  margin-top: 20px;
 }
 
 .question-date {
   color: #a0a0a0;
   font-size: 12px;
+}
+
+.question-author {
+    color: #00000;
+    font-size: 12px;
 }
 
 .question-actions {
