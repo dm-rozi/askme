@@ -1,3 +1,5 @@
 # README
-
-Study RoR project.
+///
+Study RoR project
+///
+https://ask-your-answers.herokuapp.com
